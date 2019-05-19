@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+
+<div class="row">
+  <div class="col s12 m6 offset-m2" style="width:70%">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="fixed-action-btn" *ngIf="displayName != undefined">
+    <a (click)="ShowAddBlogModel()" class="btn-floating btn-large red tooltipped" data-position="top"
+      data-tooltip="Add Blog">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+  <div id="addBlog" class="modal bottom-sheet">
+    <div class="modal-content">
+      <a class="modal-close  right" (click)="closePopup = true;"><i
+          class="material-icons dp48" style="font-size: 30px;">clear</i></a>
+      <span>
+        <h4>Add Blog </h4>
+      </span>
+      <p-editor [(ngModel)]="blogDescription" name="blogDescriptionVAl" [style]="{'height':'270px'}">
+      </p-editor>
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves-light" (click)="PostBlog()"
+        *ngIf="blogDescription !='' && blogDescription != null ">Post
+        <i class="material-icons right">send</i>
+      </button>
+
+      <button class="btn waves-effect waves-light disabled" *ngIf="blogDescription == '' || blogDescription == null">
+        Post
+        <i class="material-icons right">send</i>
+      </button>
+
+    </div>
+  </div>
+
+</div>
