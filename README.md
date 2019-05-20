@@ -1,4 +1,4 @@
-
+--------------------------Scenario--------------------------
 
 1) Every one can read all the blogs (blog list). and any one can see all the comments of that blog from detail page.
 
